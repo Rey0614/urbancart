@@ -14,3 +14,25 @@ FROM Products
 WHERE product_name LIKE '%Pro%'
 
 --Task 23
+SELECT *
+FROM Employees
+ORDER BY salary DESC
+
+--Task 24
+SELECT DISTINCT department
+FROM Employees
+
+--Task 25
+SELECT *
+FROM Orders
+WHERE status = 'Pending'
+
+--Task 26
+SELECT *
+FROM Suppliers
+WHERE NOT city = 'Jakarta'
+
+--Task 27
+SELECT TOP 5 *
+FROM Products
+ORDER BY unit_price DESC
