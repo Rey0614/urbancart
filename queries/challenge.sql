@@ -36,3 +36,8 @@ WHERE NOT city = 'Jakarta'
 SELECT TOP 5 *
 FROM Products
 ORDER BY unit_price DESC
+
+--Task 28
+SELECT category_id, COUNT(*) AS number_category
+FROM Products
+GROUP BY category_id
