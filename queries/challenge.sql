@@ -41,3 +41,8 @@ ORDER BY unit_price DESC
 SELECT category_id, COUNT(*) AS number_category
 FROM Products
 GROUP BY category_id
+
+--Task 29
+SELECT category_id, AVG(unit_price) AS average_price
+FROM Products
+GROUP BY category_id
