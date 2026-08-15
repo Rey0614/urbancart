@@ -1,0 +1,116 @@
+<svg width="1000" height="1150" viewBox="0 0 1000 1150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boxfill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3444"/>
+      <stop offset="100%" stop-color="#161c28"/>
+    </linearGradient>
+    <linearGradient id="headfill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4a63"/>
+      <stop offset="100%" stop-color="#22293a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="1150" fill="#0c0f16"/>
+  <text x="40" y="55" fill="#f2f4f8" font-family="Georgia, serif" font-size="34" font-weight="bold">UrbanCart Database Schema — ER Diagram</text>
+
+  <rect x="20" y="80" width="960" height="1040" rx="18" fill="#10141d" stroke="#2a3244" stroke-width="1.5"/>
+
+  <!-- Categories -->
+  <g font-family="Menlo, monospace">
+    <rect x="70" y="110" width="240" height="130" rx="8" fill="url(#boxfill)" stroke="#4a5972"/>
+    <rect x="70" y="110" width="240" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="88" y="133" fill="#eaf0ff" font-size="18" font-weight="bold">Categories</text>
+    <text x="88" y="165" fill="#c9d3e6" font-size="14">category_id [PK]</text>
+    <text x="88" y="188" fill="#c9d3e6" font-size="14">category_name</text>
+    <text x="88" y="211" fill="#c9d3e6" font-size="14">description</text>
+  </g>
+
+  <!-- Suppliers -->
+  <g font-family="Menlo, monospace">
+    <rect x="700" y="110" width="260" height="160" rx="8" fill="url(#boxfill)" stroke="#4a5972"/>
+    <rect x="700" y="110" width="260" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="718" y="133" fill="#eaf0ff" font-size="18" font-weight="bold">Suppliers</text>
+    <text x="718" y="165" fill="#c9d3e6" font-size="14">supplier_id [PK]</text>
+    <text x="718" y="188" fill="#c9d3e6" font-size="14">supplier_name</text>
+    <text x="718" y="211" fill="#c9d3e6" font-size="14">contact_email</text>
+    <text x="718" y="234" fill="#c9d3e6" font-size="14">city, phone</text>
+  </g>
+
+  <!-- Products -->
+  <g font-family="Menlo, monospace">
+    <rect x="370" y="300" width="270" height="180" rx="8" fill="url(#boxfill)" stroke="#5a72a3"/>
+    <rect x="370" y="300" width="270" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="388" y="323" fill="#eaf0ff" font-size="18" font-weight="bold">Products</text>
+    <text x="388" y="355" fill="#c9d3e6" font-size="14">product_id [PK]</text>
+    <text x="388" y="378" fill="#c9d3e6" font-size="14">product_name</text>
+    <text x="388" y="401" fill="#c9d3e6" font-size="14">category_id [FK]</text>
+    <text x="388" y="424" fill="#c9d3e6" font-size="14">supplier_id [FK]</text>
+    <text x="388" y="447" fill="#c9d3e6" font-size="14">unit_price, stock_quantity</text>
+  </g>
+
+  <!-- OrderDetails -->
+  <g font-family="Menlo, monospace">
+    <rect x="370" y="530" width="270" height="165" rx="8" fill="url(#boxfill)" stroke="#5a72a3"/>
+    <rect x="370" y="530" width="270" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="388" y="553" fill="#eaf0ff" font-size="18" font-weight="bold">OrderDetails</text>
+    <text x="388" y="585" fill="#c9d3e6" font-size="14">order_detail_id [PK]</text>
+    <text x="388" y="608" fill="#c9d3e6" font-size="14">order_id [FK]</text>
+    <text x="388" y="631" fill="#c9d3e6" font-size="14">product_id [FK]</text>
+    <text x="388" y="654" fill="#c9d3e6" font-size="14">quantity, unit_price</text>
+  </g>
+
+  <!-- Orders -->
+  <g font-family="Menlo, monospace">
+    <rect x="370" y="750" width="270" height="180" rx="8" fill="url(#boxfill)" stroke="#5a72a3"/>
+    <rect x="370" y="750" width="270" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="388" y="773" fill="#eaf0ff" font-size="18" font-weight="bold">Orders</text>
+    <text x="388" y="805" fill="#c9d3e6" font-size="14">order_id [PK]</text>
+    <text x="388" y="828" fill="#c9d3e6" font-size="14">customer_id [FK]</text>
+    <text x="388" y="851" fill="#c9d3e6" font-size="14">employee_id [FK]</text>
+    <text x="388" y="874" fill="#c9d3e6" font-size="14">order_date, status</text>
+  </g>
+
+  <!-- Customers -->
+  <g font-family="Menlo, monospace">
+    <rect x="70" y="980" width="270" height="150" rx="8" fill="url(#boxfill)" stroke="#4a5972"/>
+    <rect x="70" y="980" width="270" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="88" y="1003" fill="#eaf0ff" font-size="18" font-weight="bold">Customers</text>
+    <text x="88" y="1035" fill="#c9d3e6" font-size="14">customer_id [PK]</text>
+    <text x="88" y="1058" fill="#c9d3e6" font-size="14">customer_name, email, city</text>
+    <text x="88" y="1081" fill="#c9d3e6" font-size="14">signup_date, loyalty_points</text>
+  </g>
+
+  <!-- Employees -->
+  <g font-family="Menlo, monospace">
+    <rect x="660" y="980" width="270" height="150" rx="8" fill="url(#boxfill)" stroke="#4a5972"/>
+    <rect x="660" y="980" width="270" height="34" rx="8" fill="url(#headfill)"/>
+    <text x="678" y="1003" fill="#eaf0ff" font-size="18" font-weight="bold">Employees</text>
+    <text x="678" y="1035" fill="#c9d3e6" font-size="14">employee_id [PK]</text>
+    <text x="678" y="1058" fill="#c9d3e6" font-size="14">employee_name, department</text>
+    <text x="678" y="1081" fill="#c9d3e6" font-size="14">hire_date, salary</text>
+  </g>
+
+  <!-- Connectors -->
+  <g stroke="#7c93c2" stroke-width="1.5" fill="none">
+    <path d="M310,175 L370,175 L370,340"/>
+    <path d="M700,175 L640,175 L640,340"/>
+    <path d="M505,480 L505,530"/>
+    <path d="M505,695 L505,750"/>
+    <path d="M505,930 L505,955 L205,955 L205,980"/>
+    <path d="M505,930 L505,955 L795,955 L795,980"/>
+  </g>
+  <g font-family="Menlo, monospace" font-size="14" fill="#9db0d8">
+    <text x="315" y="170">1</text>
+    <text x="355" y="335">&#8734;</text>
+    <text x="660" y="170">1</text>
+    <text x="655" y="335">&#8734;</text>
+    <text x="512" y="500">1</text>
+    <text x="512" y="525">&#8734;</text>
+    <text x="512" y="715">1</text>
+    <text x="512" y="745">&#8734;</text>
+    <text x="215" y="975">1</text>
+    <text x="480" y="950">&#8734;</text>
+    <text x="785" y="975">1</text>
+    <text x="530" y="950">&#8734;</text>
+  </g>
+</svg>
